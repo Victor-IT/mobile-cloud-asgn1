@@ -29,7 +29,7 @@ repositories {
     mavenCentral()
     maven { url "http://repo.spring.io/libs-snapshot" }
     maven { url "http://maven.springframework.org/milestone" }
-    
+
     flatDir {
     	dirs 'lib'
     }
@@ -44,8 +44,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jetty")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.data:spring-data-rest-webmvc")
-    
-    
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+
     compile("org.apache.httpcomponents:httpclient:4.5.6")
     
     
@@ -61,10 +61,12 @@ dependencies {
     compile(":video.up.test:1.0.0")
     compile(":autograder.handin:1.0.0")
     compile(":autograder.spec:1.0.0")
-    
+
     testCompile("junit:junit")
 }
 
-task wrapper(type: Wrapper) {
+task wrapper2(type: Wrapper) {
     gradleVersion = '5.0'
 }
+
+mainClassName = 'org.magnum.dataup.Application'
